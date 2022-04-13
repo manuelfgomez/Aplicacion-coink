@@ -1,0 +1,25 @@
+.cabecera{
+    height: 84px;
+    width: 100%;
+    background: white;
+    .icono{
+        font-size: 30px;
+        color: var(--color-primario);
+    }
+}
+
+.cabecera-titulo{
+    color: var(--color-secundario);
+    text-align: center;
+    font-size: 16px;
+    margin-left: -50px;
+    font-family: 'Montserrat Bold';
+}
+
+.cabecera-barra{
+    height: 18px;
+    width: 188px;
+    display: block;
+    margin: auto;
+    background: white;
+}

@@ -24,3 +24,57 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url(assets/fonts/montserrat-bold.ttf);
+}
+
+@font-face {
+    font-family: "Avenir Roman";
+    src: url(assets/fonts/avenir-roman.otf);
+}
+
+@font-face {
+    font-family: "Avenir Medium";
+    src: url(assets/fonts/avenir-medium.otf);
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url(assets/fonts/montserrat-medium.otf);
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subrayar{
+    text-decoration: underline;
+}
+
+.titulo{
+    display: block;
+    color: var(--color-secundario);
+    font-size: 16px;
+    font-family: 'Montserrat Bold';
+    margin-bottom: 16px;
+}
+
+.texto{
+    font-family: 'Avenir Roman';
+    color: #757575;
+    font-size: 16px;
+}
+
+.error{
+    color: #FF0000;
+    font-size: 12px;
+    margin-left: 8px;
+    font-family: 'Avenir Roman';
+    margin-top: 8px;
+    display: block;
+}

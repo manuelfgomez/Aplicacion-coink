@@ -1,0 +1,92 @@
+<app-cabecera titulo="DATOS DE CUENTA" barra="barra2.svg"></app-cabecera>
+
+<ion-content>
+  <ion-content class="contenedor">
+    <ion-row class="fila fila-inicial">
+      <ion-col size="3">
+        <ion-img src="../../../assets/img/Oink-M.svg" class="icono"></ion-img>
+      </ion-col>
+      <ion-col size="9">
+        <p class="titulo">¿CUÁLES SON TUS DATOS?</p>
+        <p class="texto">Ahora necesitamos saber algunos datos tuyos</p>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="formulario" (ngSubmit)="registrar()">
+      <ion-row class="fila">
+        <ion-col>
+          <ion-label class="titulo">Documento de identidad</ion-label>
+          <ion-row class="mb-16">
+            <ion-col>
+                <ion-select placeholder="Tipo de documento" class="select" formControlName="tipoDocumento">
+                  <ion-select-option *ngFor="let documento of documentos" value="{{documento.id}}">{{documento.description}}</ion-select-option>
+                </ion-select>
+                <span class="error" *ngIf="formulario.get('tipoDocumento')?.touched && formulario.get('tipoDocumento')?.errors?.['required']">El campo tipo de documento es requerido</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="mb-16">
+            <ion-col>
+              <ion-input placeholder="Número de documento" class="input" formControlName="numeroDocumento"></ion-input>
+              <span class="error" *ngIf="formulario.get('numeroDocumento')?.touched && formulario.get('numeroDocumento')?.errors?.['required']">El campo número de documento es requerido</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="mb-16">
+            <ion-col>
+              <ion-input placeholder="Fecha de expedición del documento" class="input" formControlName="fechaExpedicion"></ion-input>
+              <span class="error" *ngIf="formulario.get('fechaExpedicion')?.touched && formulario.get('fechaExpedicion')?.errors?.['required']">El campo Fecha de expedición del documento es requerido</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="mb-16">
+            <ion-col>
+              <ion-input placeholder="Fecha de nacimiento" class="input" formControlName="fechaNacimiento"></ion-input>
+              <span class="error" *ngIf="formulario.get('fechaNacimiento')?.touched && formulario.get('fechaNacimiento')?.errors?.['required']">El campo Fecha de nacimiento es requerido</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="mb-16">
+            <ion-col>
+                <ion-select placeholder="Genero" class="select" formControlName="genero">
+                  <ion-select-option *ngFor="let genero of generos" value="{{genero.id}}">{{genero.name}}</ion-select-option>
+                </ion-select>
+                <span class="error" *ngIf="formulario.get('genero')?.touched && formulario.get('genero')?.errors?.['required']">El campo genero es requerido</span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="fila">
+        <ion-col>
+          <ion-label class="titulo">Configura tu cuenta</ion-label>
+          <ion-row class="mb-16">
+            <ion-col>
+                <ion-input placeholder="Correo electrónico" class="input" formControlName="correo"></ion-input>
+                <span class="error" *ngIf="formulario.get('correo')?.touched && formulario.get('correo')?.errors?.['required']">El campo correo electrónico es requerido</span>
+                <span class="error" *ngIf="formulario.get('correo')?.touched && formulario.get('correo')?.errors?.['email']">Ingrese un correo valído</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="mb-16">
+            <ion-col>
+              <ion-input placeholder="Confirmar correo electrónico" class="input" formControlName="confirmarCorreo"></ion-input>
+              <span class="error" *ngIf="formulario.get('confirmarCorreo')?.touched && formulario.get('confirmarCorreo')?.errors?.['camposIguales'] == false">Este campo no coincide con el correo</span>
+              <span class="error" *ngIf="formulario.get('confirmarCorreo')?.touched && formulario.get('confirmarCorreo')?.errors?.['email']">Ingrese un correo valído</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="mb-16">
+            <ion-col>
+              <ion-input  [type]="typePin" placeholder="PIN de seguridad" class="input" formControlName="pin"></ion-input>
+              <ion-img class="icon-show-pin" src="../../../assets/img/{{img}}" (click)="togglePin()"></ion-img>
+            </ion-col>
+          </ion-row>
+          <ion-row class="mb-16">
+            <ion-col>
+              <ion-input  [type]="typeConfirmarPin" placeholder="Confirmar PIN de seguridad" class="input" formControlName="confirmarPin"></ion-input>
+              <ion-img class="icon-show-pin" src="../../../assets/img/{{imgConfirmarPin}}" (click)="toggleConfirmarPin()"></ion-img>
+              <span class="error" *ngIf="formulario.get('confirmarPin')?.touched && formulario.get('confirmarPin')?.errors?.['camposIguales'] == false">Este campo no coincide con el PIN</span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="fila">
+        <ion-col class="centrar">
+          <ion-button type="submit" class="btn-siguiente" [disabled]="formulario.invalid">SIGUIENTE</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+</ion-content>

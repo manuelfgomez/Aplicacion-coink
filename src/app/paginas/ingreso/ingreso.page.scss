@@ -1,0 +1,46 @@
+.contenedor{
+    margin: 40px;
+}
+
+.contenedor-icono{
+    height: 338.7px;
+    .icono{
+        width: 125.97px;
+        height: 154.7px;
+    }
+}
+
+.contenedor-titulo{
+    .titulo{
+       color: var(--color-primario);
+       font-size: 18px;
+       text-align: center;
+       font-family: 'Montserrat Bold';
+    }
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-boton{
+    flex-direction: column;
+    justify-content: end;
+    height: 282.3px;
+    .boton{
+        width: 326px;
+        height: 50px;
+        --border-radius:40px;
+        margin-bottom: 16px;
+        font-family: 'Montserrat Bold';
+    }
+    .boton-registrar{
+        --background: var(--color-primario);
+    }
+    .boton-ingresar{
+        --background: #004B40;
+    }
+}
+

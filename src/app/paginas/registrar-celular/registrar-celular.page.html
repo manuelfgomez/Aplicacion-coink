@@ -1,0 +1,41 @@
+<app-cabecera titulo="NÚMERO CELULAR" barra="barra1.svg"></app-cabecera>
+<ion-content class="contenedor">
+  <ion-row class="fila-inicial">
+    <ion-col size="3">
+      <ion-img src="../../../assets/img/Oink.svg" class="icono"></ion-img>
+    </ion-col>
+    <ion-col size="9">
+      <p class="texto">Para comenzar, por favor ingresa tu <strong>número celular.</strong></p>
+    </ion-col>
+  </ion-row>
+  <form [formGroup]="formulario">
+    <ion-row class="fila-celular">
+      <ion-col>
+        <ion-input placeholder="(xxx - xxxxxx)" class="input"  formControlName="numeroCelular"></ion-input>
+        <span class="error" *ngIf="formulario.get('numeroCelular')?.touched && formulario.get('numeroCelular')?.errors?.['required']">El campo número de celular es requerido</span>
+        <span class="error" *ngIf="formulario.get('numeroCelular')?.touched && formulario.get('numeroCelular')?.errors?.['minlength']">Por favor, complete el número de celular</span>
+        <span class="error" *ngIf="formulario.get('numeroCelular')?.touched && formulario.get('numeroCelular')?.errors?.['maxlength']">Por favor, ingrese un número de celular válido</span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="fila">
+      <div class="teclado">
+        <div (click)="agregarNumero('1')">1</div>
+        <div (click)="agregarNumero('2')">2</div>
+        <div (click)="agregarNumero('3')">3</div>
+        <div (click)="agregarNumero('4')">4</div>
+        <div (click)="agregarNumero('5')">5</div>
+        <div (click)="agregarNumero('6')">6</div>
+        <div (click)="agregarNumero('7')">7</div>
+        <div (click)="agregarNumero('8')">8</div>
+        <div (click)="agregarNumero('9')">9</div>
+        <div class="centrar"><ion-img src="../../../assets/img/Backspace.svg" class="back-space" (click)="backSpace()"></ion-img></div>
+        <div (click)="agregarNumero('0')">0</div>
+        <div class="centrar">
+          <ion-button [disabled]="formulario.invalid" class="button" (click)="registrar()">
+            <ion-img src="../../../assets/img/Check.svg" class="icon-check"></ion-img>
+          </ion-button>
+        </div>
+      </div>
+    </ion-row>
+  </form>
+</ion-content>

@@ -3,13 +3,29 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: '',
+    redirectTo: 'ingreso',
+    pathMatch: 'full'
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'ingreso',
+    loadChildren: () => import('./paginas/ingreso/ingreso.module').then( m => m.IngresoPageModule)
+  },
+  {
+    path: 'registrar-celular',
+    loadChildren: () => import('./paginas/registrar-celular/registrar-celular.module').then( m => m.RegistrarCelularPageModule)
+  },
+  {
+    path: 'datos-cuenta',
+    loadChildren: () => import('./paginas/datos-cuenta/datos-cuenta.module').then( m => m.DatosCuentaPageModule)
+  },
+  {
+    path: 'contrato',
+    loadChildren: () => import('./paginas/contrato/contrato.module').then( m => m.ContratoPageModule)
+  },
+  {
+    path: 'registro-exitoso',
+    loadChildren: () => import('./paginas/registro-exitoso/registro-exitoso.module').then( m => m.RegistroExitosoPageModule)
   },
 ];
 

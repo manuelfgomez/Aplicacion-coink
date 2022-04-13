@@ -1,0 +1,69 @@
+.contenedor{
+    padding: 24px;
+}
+
+.fila{
+    margin: 24px;
+    .input{
+        border-bottom: 1px solid #AAAAAA;
+        height: 48px;
+    }
+    .mb-16{
+        margin-bottom: 16px;
+    }
+}
+
+.fila-inicial{
+    height: 164px;
+    border-bottom: 1px solid var(--color-primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 24px 0px 24px;
+}
+
+.titulo{
+    display: block;
+    color: var(--color-secundario);
+    font-size: 16px;
+    font-family: 'Montserrat Bold';
+    margin-bottom: 16px;
+}
+
+.subtitulo{
+    font-size: 14px;
+}
+
+.icono{
+    width: 72.35px;
+    height: 85.12px;
+}
+
+.padding-left-15{
+    padding-left: 24px;
+}
+
+.checkbox{
+    --background-checked:var(--color-primario);
+    --border-color-checked:var(--color-primario);
+    margin-right: 12.45px;
+}
+
+.contenedor-check{
+    display: flex;
+    align-items: center;
+}
+
+.btn-aceptar{
+    color: #004B40;
+    --background: var(--color-primario);
+    height: 50px;
+    width: 326px;
+    --border-radius: 40px;
+    font-family: 'Montserrat Bold';
+    font-size: 16px;
+}
+
+.label-acepto{
+    color: var(--color-secundario);
+}

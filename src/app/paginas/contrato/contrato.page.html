@@ -1,0 +1,47 @@
+<app-cabecera titulo="FINALIZAR" barra="barra3.svg"></app-cabecera>
+
+<ion-content class="contenedor">
+  <ion-row class="fila fila-inicial">
+    <ion-col size="3">
+      <ion-img src="../../../assets/img/OinkPolicia.svg" class="icono"></ion-img>
+    </ion-col>
+    <ion-col size="9" class="padding-left-15">
+      <p class="titulo">ESTAS MUY CERCA DE SER PARTE DE COINK.</p>
+      <p class="subtitulo texto">Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo aceptes.</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="fila">
+    <ion-col>
+      <ion-label class="titulo">LO MÁS IMPORTANTE</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="fila">
+    <ion-col>
+      <p class="subtitulo texto">
+        Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de acuerdo con nuestra legislación vigente 
+        te encuentres en plena capacidad para adquirir derechos y contraer obligaciones.<br/><br/> 
+        Abrirás una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios mínimos en el mes y realizar débitos por el mismo valor.
+        Si deseas sobrepasar estos límites debes solicitarnos la apertura de un Depósito Ordinario COINK Persona Natural.<br/><br/> 
+        Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar tu dispositivo móvil para consultar tu saldo, tus movimientos, 
+        realizar tus transacciones y administrar tu cuenta.<br/><br/>
+        Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="fila">
+    <ion-col>
+      <ion-row>
+        <ion-label class="titulo subrayar">Lee tu contrato</ion-label>
+      </ion-row>
+      <ion-row class="contenedor-check">
+        <ion-checkbox type="checkbox" class="checkbox" [(ngModel)]="aceptoContrato"></ion-checkbox>
+        <ion-label class="label-acepto texto">He leído ya acepto el contrato</ion-label>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row class="fila">
+    <ion-col class="centrar">
+      <ion-button class="btn-aceptar" [disabled]="!aceptoContrato" (click)="aceptar()">ACEPTAR</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

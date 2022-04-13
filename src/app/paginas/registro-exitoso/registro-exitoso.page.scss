@@ -1,0 +1,47 @@
+.contenedor{
+    height: 100%;
+    width: 100%;
+    background: #00000033;
+}
+.alerta{
+    width: 269px;
+    height: 349px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 0px 24px;
+    .fila-icon{
+        margin-top: 48px;
+    }
+    .icon-marrano{
+        width: 101px !important;
+        height: 80px;
+        margin: auto;
+    }
+    .titulo{
+        color: var(--color-secundario);
+        font-size: 20px;
+        font-family: 'Montserrat Bold';
+        width: 100%;
+        text-align: center;
+    }
+    .parrafo{
+        color:#212121;
+        font-size: 16px;
+        font-family: 'Avenir Roman';
+        margin-top: 0px;
+        margin-bottom: 32px;
+    }
+    .fila-boton{
+        display: flex;
+        justify-content: center;
+        .boton-continuar{
+            font-size: 14px;
+            font-family: 'Montserrat Bold';
+            color: #004B40;
+            width: 221px;
+            height: 36px;
+            --background:var(--color-primario);
+            --border-radius:40px;
+        }
+    }
+}
